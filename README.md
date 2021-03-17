@@ -15,3 +15,5 @@
 ### More_connectors_‿⁀⁔︳︴﹍﹎﹏＿connecting
 
 ### More-dashes-‒–—―dashing
+
+### More 8 numbers 9 numbering roman Ⅷ superscript ² thai ๕ 
