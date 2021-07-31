@@ -1,5 +1,5 @@
----
-fee:
-  fi:
-    fo:
-      fum:
+yaml:
+- one
+- two
+- three:
+    four
