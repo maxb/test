@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     stages {
-        when { not { branch 'master' } }
         stage('Template Formatting') {
+            when { not { branch 'master' } }
             steps {
                 // sh 'git checkout -B "$GIT_BRANCH"'
                 sh './format-template.py'
