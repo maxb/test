@@ -1,1 +1,1 @@
-{"enterprise": "NCC-1701", "defiant": "NX-74205", "voyager": "NCC-74656"}
+{"foo": ["bar", {"baz": "quux"}]}
