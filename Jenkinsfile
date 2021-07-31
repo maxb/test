@@ -2,11 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage One') {
+        when { not { branch 'master' } }
+        stage('Template Formatting') {
             steps {
                 // sh 'git checkout -B "$GIT_BRANCH"'
-                sh 'date >> datefile.txt'
-                sh 'git add datefile.txt'
+                sh './format-template.py'
+                sh 'git add -A .'
                 sh 'git commit -m "Automatic commit from Jenkins"'
                 withCredentials([usernamePassword(credentialsId: 'maxb-github-app',
                                                   usernameVariable: 'GITHUB_APP',
