@@ -4,7 +4,10 @@ pipeline {
     stages {
         stage('Stage One') {
             steps {
-                echo 'Hello World!'
+                sh 'date >> datefile.txt'
+                sh 'git add datefile.txt'
+                sh 'git commit -m "Automatic commit from Jenkins"'
+                sh 'git push'
             }
         }
     }
