@@ -8,7 +8,11 @@ pipeline {
                 sh 'date >> datefile.txt'
                 sh 'git add datefile.txt'
                 sh 'git commit -m "Automatic commit from Jenkins"'
-                sh 'git push'
+                withCredentials([usernamePassword(credentialsId: 'maxb-github--app',
+                                                  usernameVariable: 'GITHUB_APP',
+                                                  passwordVariable: 'GITHUB_ACCESS_TOKEN')]) {
+                    sh 'git push https://$GITHUB_APP:$GITHUB_ACCESS_TOKEN@github.com/maxb/test'
+                }
             }
         }
     }
