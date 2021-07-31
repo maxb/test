@@ -18,4 +18,5 @@ pipeline {
         }
     }
 }
-# vim:sw=4:et
+
+// vim:sw=4:et
