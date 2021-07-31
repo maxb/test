@@ -18,6 +18,7 @@ pipeline {
                     fi
                     '''
                 }
+                sh 'exit 1' // Intentional failure
             }
         }
     }
