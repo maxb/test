@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Stage One') {
             steps {
-                sh 'git checkout "$GIT_BRANCH"'
+                sh 'git checkout -B "$GIT_BRANCH"'
                 sh 'date >> datefile.txt'
                 sh 'git add datefile.txt'
                 sh 'git commit -m "Automatic commit from Jenkins"'
