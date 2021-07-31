@@ -2,16 +2,21 @@ pipeline {
     agent any
 
     stages {
-        stage('Stage One') {
+        stage('Template Formatting') {
+            when { not { branch 'master' } }
             steps {
                 // sh 'git checkout -B "$GIT_BRANCH"'
-                sh 'date >> datefile.txt'
-                sh 'git add datefile.txt'
-                sh 'git commit -m "Automatic commit from Jenkins"'
+                sh './format-template.py'
                 withCredentials([usernamePassword(credentialsId: 'maxb-github-app',
                                                   usernameVariable: 'GITHUB_APP',
                                                   passwordVariable: 'GITHUB_ACCESS_TOKEN')]) {
-                    sh 'git push https://$GITHUB_APP:$GITHUB_ACCESS_TOKEN@github.com/maxb/test'
+                    sh '''
+                    git add -A .
+                    if [ "$(git status --porcelain)" ]; then
+                        git commit -m "Automatic commit from Jenkins"
+                        git push https://$GITHUB_APP:$GITHUB_ACCESS_TOKEN@github.com/maxb/test
+                    fi
+                    '''
                 }
             }
         }
