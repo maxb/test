@@ -1,5 +1,4 @@
 ---
-fee:
-  fi:
-    fo:
-      fum:
+foo:
+- bar
+- baz: quux
