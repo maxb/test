@@ -13,7 +13,7 @@ pipeline {
                     sh '''
                     git add -A .
                     if [ "$(git status --porcelain)" ]; then
-                        git commit -m "Automatic commit from Jenkins"'
+                        git commit -m "Automatic commit from Jenkins"
                         git push https://$GITHUB_APP:$GITHUB_ACCESS_TOKEN@github.com/maxb/test
                     fi
                     '''
