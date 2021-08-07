@@ -1,1 +1,1 @@
-{"yaml": ["one", "two", {"three": "four"}]}
+{"foo": ["bar", {"baz": "quux"}, {"hello": "world"}]}

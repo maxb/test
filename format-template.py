@@ -8,3 +8,4 @@ with open('example.yaml') as f:
 
 with open('example.json', 'w') as f:
     json.dump(data, f)
+    f.write('\n')
