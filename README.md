@@ -2,6 +2,8 @@
 
 ## Samples
 
+An auto-mergeable change
+
 ###     (((( !@#$%^&*() Heading ))))
 
 ### Foo/Bar .
