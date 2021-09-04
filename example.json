@@ -1,1 +1,1 @@
-{"foo": ["bar", {"baz": "quux"}, {"hello": "world"}]}
+{"foo": ["bar", {"baz": "quux"}, {"hello": "world"}], "new": 2}
