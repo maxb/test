@@ -1,10 +1,16 @@
 pipeline {
     agent any
 
+    options {
+        skipDefaultCheckout()
+    }
+
     stages {
         stage('Template Formatting') {
             when { not { branch 'master' } }
             steps {
+                checkout scm
+
                 // Only needed if you can't configure the "Check out to matching local branch" behaviour:
                 // sh 'git checkout -B "$GIT_BRANCH"'
 
