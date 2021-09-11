@@ -1,3 +1,11 @@
+def demoStage(String name, Closure body) {
+  stage(name) {
+    steps {
+      body()
+    }
+  }
+}
+
 pipeline {
   agent any
 
@@ -6,6 +14,10 @@ pipeline {
   }
 
   stages {
+    demoStage('Do something') {
+      sh "echo Something!"
+    }
+
     stage('Template Formatting') {
       when { not { branch 'master' } }
       steps {
