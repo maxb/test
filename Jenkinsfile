@@ -1,9 +1,5 @@
-def demoStage(String name, Closure body) {
-  stage(name) {
-    steps {
-      body()
-    }
-  }
+def testStep(String name) {
+  sh "echo 'Now we are testing ${name}'"
 }
 
 pipeline {
@@ -14,9 +10,8 @@ pipeline {
   }
 
   stages {
-    demoStage('Do something') {
-      sh "echo Something!"
-    }
+    stage('Do something')      { steps { script { testStep('something') }}}
+    stage('Do something else') { steps { script { testStep('something else') }}}
 
     stage('Template Formatting') {
       when { not { branch 'master' } }
