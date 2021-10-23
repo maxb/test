@@ -23,7 +23,8 @@ pipeline {
 
     stage('Use library') {
       steps {
-        common foo: 1
+        common foo: 1 {
+        }
       }
     }
 
