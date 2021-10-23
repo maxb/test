@@ -25,6 +25,10 @@ pipeline {
       steps {
         common foo: 1 {
         }
+        script {
+          log.info 'Starting'
+          log.warning 'Nothing to do!'
+        }
       }
     }
 
