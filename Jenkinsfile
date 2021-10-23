@@ -1,4 +1,4 @@
-library identifier: 'vvp@master', retriever: modernScm(scm)
+library identifier: 'vvp@master', retriever: modernSCM(scm)
 
 def testStep(String name) {
   sh "echo 'Now we are testing ${name}'"
