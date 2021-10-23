@@ -20,11 +20,11 @@ pipeline {
         script {
           log.info 'Starting'
           log.warning 'Nothing to do!'
+          wrap() {
+            echo 'Body'
+          }
         }
         hello 'world'
-        wrap() {
-          echo 'Body'
-        }
       }
     }
 
