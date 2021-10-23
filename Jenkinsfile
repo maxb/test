@@ -1,4 +1,10 @@
-library identifier: 'vvp@master', retriever: modernSCM(scm)
+library(
+  identifier: 'vvp@master',
+  retriever: modernSCM([
+    $class: 'GitSCMSource',
+    remote: 'https://github.com/maxb/test'
+  ])
+)
 
 def testStep(String name) {
   sh "echo 'Now we are testing ${name}'"
