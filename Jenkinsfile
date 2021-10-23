@@ -1,3 +1,5 @@
+library identifier: 'vvp@master', retriever: scm
+
 def testStep(String name) {
   sh "echo 'Now we are testing ${name}'"
 }
@@ -12,6 +14,14 @@ pipeline {
   stages {
     stage('Do something')      { steps { script { testStep('something') }}}
     stage('Do something else') { steps { script { testStep('something else') }}}
+
+    stage('Use library') {
+      steps {
+        script {
+          common.foobar
+        }
+      }
+    }
 
     stage('Template Formatting') {
       when { not { branch 'master' } }
