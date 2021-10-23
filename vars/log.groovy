@@ -1,7 +1,7 @@
-def info(message) {
-    echo "INFO: ${message}"
+def info(String message) {
+  echo "INFO: ${message}"
 }
 
-def warning(message) {
-    echo "WARNING: ${message}"
+def warning(String message) {
+  echo "WARNING: ${message}"
 }

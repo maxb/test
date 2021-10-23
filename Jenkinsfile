@@ -1,10 +1,4 @@
-library(
-  identifier: 'vvp@master',
-  retriever: modernSCM([
-    $class: 'GitSCMSource',
-    remote: 'https://github.com/maxb/test'
-  ])
-)
+library(identifier: 'this-repo@this-repo', retriever: legacySCM(scm))
 
 def testStep(String name) {
   sh "echo 'Now we are testing ${name}'"
@@ -28,6 +22,9 @@ pipeline {
           log.warning 'Nothing to do!'
         }
         hello 'world'
+        wrap {
+          echo 'Body'
+        }
       }
     }
 
