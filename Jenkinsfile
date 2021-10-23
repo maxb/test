@@ -22,7 +22,7 @@ pipeline {
           log.warning 'Nothing to do!'
         }
         hello 'world'
-        wrap {
+        wrap() {
           echo 'Body'
         }
       }
