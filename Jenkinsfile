@@ -22,7 +22,9 @@ pipeline {
     stage('Do something else') { steps { script { testStep('something else') }}}
 
     stage('Use library') {
-      common foo: 1
+      steps {
+        common foo: 1
+      }
     }
 
     stage('Template Formatting') {
