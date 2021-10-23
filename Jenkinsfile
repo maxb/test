@@ -23,9 +23,7 @@ pipeline {
 
     stage('Use library') {
       steps {
-        script {
-          common.foobar
-        }
+        common.foobar()
       }
     }
 
