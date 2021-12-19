@@ -3,10 +3,6 @@ library(identifier: 'this-repo@this-repo', retriever: legacySCM(scm))
 pipeline {
   agent any
 
-  options {
-    skipDefaultCheckout()
-  }
-
   stages {
     stage('Use library') {
       steps {
