@@ -4,9 +4,8 @@ if (false) {
 } else {
   echo 'This build will use modernSCM SPECIFIED branch technique'
   library(identifier: 'this-repo@master',
-          retriever: modernSCM([$class: 'GitSCMSource',
-                                remote: scm.userRemoteConfigs[0].url,
-                                credentialsId: scm.userRemoteConfigs[0].credentialsId]))
+          retriever: modernSCM(git(remote: scm.userRemoteConfigs[0].url,
+                                   credentialsId: scm.userRemoteConfigs[0].credentialsId]))
 }
 
 pipeline {
