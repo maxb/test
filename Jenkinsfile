@@ -1,10 +1,12 @@
-println "Hello ${currentBuild.number}"
 if (currentBuild.number % 2 == 0) {
+  echo 'This build will use legacySCM same branch technique'
   library(identifier: 'this-repo@current-branch', retriever: legacySCM(scm))
 } else if (currentBuild.number % 2 == 1) {
+  echo 'This build will use modernSCM same branch technique'
   library(identifier: 'this-repo@current-branch',
           retriever: modernSCM(fromScm(name: 'current-branch', scm: scm)))
 } else {
+  echo 'This build will use modernSCM SPECIFIED branch technique'
   library(identifier: 'this-repo@master',
           retriever: modernSCM([$class: 'GitSCMSource',
                                 remote: scm.userRemoteConfigs[0].url,
