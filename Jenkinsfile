@@ -1,4 +1,4 @@
-if (false) {
+if (true) {
   echo 'This build will use legacySCM same branch technique'
   library(identifier: 'this-repo@current-branch', retriever: legacySCM(scm))
 } else {
@@ -11,6 +11,11 @@ if (false) {
 
 pipeline {
   agent any
+
+  parameters {
+    booleanParam(name: 'BOOLEAN')
+    log.info 'Params'
+  }
 
   stages {
     stage('Use library') {
