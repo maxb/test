@@ -14,7 +14,9 @@ pipeline {
 
   parameters {
     booleanParam(name: 'BOOLEAN')
-    log.info 'Params'
+    script {
+      log.info 'Params'
+    }
   }
 
   stages {
