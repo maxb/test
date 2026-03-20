@@ -23,3 +23,5 @@ An auto-mergeable change
 New PR
 
 Make a conflict
+
+Foobar
